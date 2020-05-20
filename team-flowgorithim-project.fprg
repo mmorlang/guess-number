@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="micki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-20 04:15:12 PM"/>
+        <attribute name="created" value="bWlja2k7REVTS1RPUC1GTjZVNThPOzIwMjAtMDUtMjA7MDM6MzE6NTYgUE07Mjg1Ng=="/>
+        <attribute name="edited" value="bWlja2k7REVTS1RPUC1GTjZVNThPOzIwMjAtMDUtMjA7MDQ6MTU6MTIgUE07MTsyOTU5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="secret" type="Integer" array="False" size=""/>
+            <assign variable="secret" expression="Random(100) +1"/>
+            <declare name="solved" type="Boolean" array="False" size=""/>
+            <assign variable="solved" expression="false"/>
+            <declare name="guess" type="Integer" array="False" size=""/>
+            <output expression="&quot;Guess a number between 1-100&quot;" newline="True"/>
+            <while expression="!solved">
+                <input variable="guess"/>
+                <if expression="guess == secret">
+                    <then>
+                        <assign variable="solved" expression="true"/>
+                        <output expression="&quot;Good Guess!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="guess &lt; secret">
+                            <then>
+                                <output expression="&quot;Higher&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Lower&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
